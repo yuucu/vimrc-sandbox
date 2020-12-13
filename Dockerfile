@@ -5,6 +5,9 @@ WORKDIR /root
 RUN apk --update add \
     vim \
     git \
+    tmux \
+    nodejs \
+    npm \
     curl
 
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -14,5 +17,5 @@ COPY ./vimrc /root/.vimrc
 
 ENV USER root
 
-RUN rustup component add rustfmt
+RUN rustup component add rustfmt rls rust-analysis rust-src
 
